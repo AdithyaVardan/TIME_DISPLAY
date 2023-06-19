@@ -9,8 +9,8 @@
 #include "time.h"
 #include "Ticker.h"
 
-const char* ssid     = "Adithya Vardan";
-const char* password = "pass1234";
+const char* ssid     = "your SSID NAME";
+const char* password = "your SSID PASSWORD";
 
 const char* ntpServer = "pool.ntp.org";
 const long  gmtOffset_sec = 19850;
