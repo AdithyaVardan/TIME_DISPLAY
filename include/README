@@ -1,0 +1,3 @@
+TIME DISPLAY
+
+This project displays time on a 32x8 led matrix display connected with ESP32 DEV MODULE using I2C PROTOCOL ESP32 is a microcontroller based on the 2 Xtensa 32-bit LX6 microprocessors.This particular dev board has wifi built in which is used to connect to the WIFI network and get the time and date info from the internet using WIFI.h library this is then displayed on to the said display using the MD_MAX72XX and MD_PAROLA library which are used to drive the said display
