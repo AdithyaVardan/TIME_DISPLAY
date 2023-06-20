@@ -18,7 +18,6 @@ using namespace std;
 #define MAX_DEVICES 4
 #define CS_PIN 5
 String Date="Jun 20 2023";
-String Time="Jun 20 2023";
 MD_Parola Display = MD_Parola(HARDWARE_TYPE, CS_PIN, MAX_DEVICES);
 
 char Week_days[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
@@ -37,35 +36,40 @@ void setup () {
     Serial.println("Couldn't find RTC");
     while(1);
   }
-   //DS1307_RTC.adjust(DateTime("Jun 20 2023","14:47:30"));
+   //DS1307_RTC.adjust(DateTime("Jun 20 2023","16:26:00"));
 }
 
-
+int hour = 0;
+int mini = 0;
+int day = 0;
+bool f=true;
+char Buffer[50]={0};
+char Temp_Buffer[10]={0};
 void loop () {
     DateTime now = DS1307_RTC.now();
-
-    Serial.print(now.year(), DEC);
-    Serial.print('/');
-    Serial.print(now.month(), DEC);
-    Serial.print('/');
-    Serial.print(now.day(), DEC);
-    Serial.print(" (");
-    Serial.print(Week_days[now.dayOfTheWeek()]);
-    Serial.print(") ");
-    Serial.print(now.hour(), DEC);
-    Serial.print(':');
-    Serial.print(now.minute(), DEC);
-    Serial.print(':');
-    Serial.print(now.second(), DEC);
-    Serial.println();
+    hour = now.twelveHour();
+    mini =now.minute();
+    memset(Temp_Buffer,0,sizeof(Temp_Buffer));
+    memset(Buffer,0,sizeof(Buffer));
+    sprintf(Temp_Buffer,"%d",hour);
+    strcat(Buffer,Temp_Buffer);
+    if(f==true){
+    strcat(Buffer,":");
+    f=false;
+    }
+    else
+    {
+    strcat(Buffer," ");
+    f=true;
+    }
+    memset(Temp_Buffer,0,sizeof(Temp_Buffer));
+    sprintf(Temp_Buffer,"%d",mini);
+    strcat(Buffer,Temp_Buffer);
+    Buffer[8]=NULL;
     if (Display.displayAnimate()) {
     Display.displayReset();
     }
     Display.setTextAlignment(PA_CENTER);
-    Display.print(now.minute());
-    Display.print(now.second());
-
-    // calculate a date which is 7 days, 12 hours, 30 minutes, 6 seconds into the future
-    DateTime future (now );
+    Display.print(Buffer);
     delay(1000);
 }
