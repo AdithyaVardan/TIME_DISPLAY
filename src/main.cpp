@@ -17,10 +17,8 @@ using namespace std;
 // Defining size, and output pins
 #define MAX_DEVICES 4
 #define CS_PIN 5
-String Date="Jun 20 2023";
 MD_Parola Display = MD_Parola(HARDWARE_TYPE, CS_PIN, MAX_DEVICES);
 
-char Week_days[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
 void setup () {
   Serial.begin(115200);
