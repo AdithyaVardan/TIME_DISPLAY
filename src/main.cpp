@@ -49,7 +49,7 @@ void loop () {
     mini =now.minute();
     memset(Temp_Buffer,0,sizeof(Temp_Buffer));
     memset(Buffer,0,sizeof(Buffer));
-    sprintf(Temp_Buffer,"%d",hour);
+    sprintf(Temp_Buffer,"%02d",hour);
     strcat(Buffer,Temp_Buffer);
     if(f==true){
     strcat(Buffer,":");
@@ -61,7 +61,7 @@ void loop () {
     f=true;
     }
     memset(Temp_Buffer,0,sizeof(Temp_Buffer));
-    sprintf(Temp_Buffer,"%d",mini);
+    sprintf(Temp_Buffer,"%02d",mini);
     strcat(Buffer,Temp_Buffer);
     Buffer[8]=NULL;
     if (Display.displayAnimate()) {
