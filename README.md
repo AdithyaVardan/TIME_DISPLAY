@@ -136,10 +136,10 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 If you have any questions or need further assistance with the project, feel free to contact:
 
-- **Your Name**
-- [Your Email]
-- GitHub: [your-username](https://github.com/your-username)
+- **ADITHYA VARDAN**
+- [a.adithyavardan1@gmaial.com]
+- GitHub: [AdithyaVardan](https://github.com/AdithyaVardan)
 
 ---
 
-This README covers the project's overview, setup instructions, and usage guidelines to ensure easy integration and understanding. You can adjust it based on the specific details of your project.
+
