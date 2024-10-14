@@ -137,7 +137,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 If you have any questions or need further assistance with the project, feel free to contact:
 
 - **ADITHYA VARDAN**
-- [a.adithyavardan1@gmaial.com]
+- [a.adithyavardan1@gmail.com]
 - GitHub: [AdithyaVardan](https://github.com/AdithyaVardan)
 
 ---
